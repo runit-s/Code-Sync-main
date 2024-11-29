@@ -1,0 +1,280 @@
+@import url("tldraw/tldraw.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .view-title {
+        @apply mb-2 w-full border-b pb-2 text-start text-lg;
+    }
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    --sb-track-color: #3d404a;
+    --sb-thumb-color: #e1e1ffb3;
+    --sb-size: 6px;
+}
+
+::-webkit-scrollbar {
+    width: var(--sb-size);
+    height: var(--sb-size);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 5px;
+    height: var(--sb-size);
+    width: var(--sb-size);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 5px;
+    height: var(--sb-size);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Editor */
+
+.cm-editor {
+    max-height: 93vh;
+}
+
+.cm-editor .cm-scroller {
+    font-family: "Space Mono", monospace;
+    /* min-height: 100vh; */
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .cm-editor {
+        max-height: calc(93vh - 60px);
+    }
+
+    .cm-editor .cm-scroller {
+        min-height: calc(93vh - 60px);
+    }
+}
+
+/* Github Corner */
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+    20%,
+    60% {
+        transform: rotate(-25deg);
+    }
+    40%,
+    80% {
+        transform: rotate(10deg);
+    }
+}
+
+
+.homePageWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    height: 100vh;
+  }
+  img{
+    width:80px;
+    border-radius: 10rem;
+    box-shadow: 0.05rem 0.01rem 0.5rem 0.2rem rgb(65, 116, 255);
+  }
+  .formWrapper{
+    background: #282a36;
+    width: 400px;
+    max-width: 70%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0.05rem 0.01rem 0.5rem 0.2rem rgb(65, 116, 255);
+    border-radius: 1rem;
+  }
+  .inputGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  footer{
+    position: fixed;
+    bottom: 0;
+  }
+  .mainLable1{
+    color: rgb(65, 116, 255);
+  }
+  .mainLable{
+    color: rgb(127, 193, 255);
+  }
+  .createInfo{
+    text-align: center;
+  }
+  a{
+    color: rgb(127, 189, 255);
+    transition: all 0.3s ease-in-out;
+  }
+  .inputBox{
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 14px;
+    background: #eee;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .btn{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .joinBtn{
+    font-weight: 600;
+    background: rgb(65, 116, 255);
+    width: 100px;
+  }
+  .joinBtn:hover{
+    background: rgb(65, 116, 210);;
+  }
+  .createInfo div a{
+    text-decoration: none;
+    border-bottom: 1px solid rgb(127, 140, 255);
+    transition: all 0.3s ease-in-out;
+  } 
+  .createInfo div:hover a, footer a:hover{
+    color: rgb(65, 116, 203);;
+    border-color: rgb(65, 116, 203);
+  }
+  
+  .mainWrap{
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    height: 100vh;
+    background-color: #282a36;
+  }
+  
+  .logo{
+    width: 80px;
+    margin: 0 auto;
+  }
+  
+  .aside{
+    background: #1c1e29;
+    padding: 16px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .logo{
+    width: 80px;
+    margin: 0 auto;
+  }
+  .clientsList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .client{
+    overflow: hidden;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    align-items: center;
+  }
+  .asideInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+  .copyBtn{
+    background: rgb(89, 133, 255);
+    color: #fff;
+    width: 135px;
+    font-weight: 600;
+  }
+  .copyBtn:hover{
+    background: rgb(74, 105, 192);
+  }
+  .leaveBtn{
+    font-weight: 600;
+    width: 135px;
+    background: rgb(255, 0, 85);
+  }
+  .leaveBtn:hover{
+    color: #fff;
+    background: rgb(0, 189, 132);
+  }
+  .editorWrap .CodeMirror{
+    min-height: calc(100vh - 20px);
+    font-size: 20px;
+    line-height: 1.6;
+    padding-top: 20px;
+  }
+  
+  .logoContainer {
+    display: flex; /* Place children in a row */
+    align-items: center; /* Vertically center-align the items */
+    gap: 10px; /* Add space between the logo and the title */
+  }
+  
+  .logoImage {
+    width: 50px; /* Adjust size of the logo */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .title {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    color: #fff; /* Adjust color (optional) */
+  }
+  
